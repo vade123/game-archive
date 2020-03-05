@@ -32,9 +32,9 @@ const UploadPage = () => {
         <br />
         <form onSubmit={onSubmit}>
           <div>
-            <input type='text' name='code' onChange={(target)=>setCode(target.value)}/>
+            <input style={{ width: '170px' }} type='password' name='code' placeholder='super secret upload code' onChange={(target)=>setCode(target.value)}/>
           </div>
-          <button style={{ width: '147px'}} type='submit'>Upload</button>
+          <button style={{ width: '176px'}} type='submit'>Upload</button>
         </form>
       </div>
     </div>
