@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 
-const ListItem = ({ game, setCurrent }) => {
+import { Link } from 'react-router-dom';
+
+const ListItem = ({ game }) => {
   const [ hover, setHover ] = useState(false);
   
   let item;
@@ -26,9 +28,8 @@ const ListItem = ({ game, setCurrent }) => {
       key={game.name} 
       style={item}
       onMouseEnter={toggleHover}
-      onMouseLeave={toggleHover}
-      onClick={()=>setCurrent(game)}>
-        > {game.name}
+      onMouseLeave={toggleHover}>
+        <Link to={`/${game.name}`}>> {game.name}</Link>
     </ul>
   )
 }

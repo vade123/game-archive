@@ -1,15 +1,15 @@
 import './App.css'
 
 import React, { useEffect, useState } from 'react';
+import { Route, BrowserRouter as Router } from 'react-router-dom';
 
 import Footer from './components/Footer';
-import FrontPage from './components/FrontPage'
-import Game from './components/GamePage'
+import FrontPage from './components/FrontPage';
+import GamePage from './components/GamePage';
 import gameService from './services/games';
 
 const App = () => {
   const [games, setGames] = useState([]);
-  const [current, setCurrent] = useState(null);
 
   useEffect(() => {
     gameService
@@ -19,10 +19,18 @@ const App = () => {
       });
   }, []);
 
+  const gameByName = ( name ) => {
+    return games.find(game => game.name === name)
+  }
+  
   return (
     <div>
-      {current === null && <FrontPage games={games} setCurrent={setCurrent} />}
-      {current !== null && <Game game={current} setCurrent={setCurrent} />}
+      <Router>
+        <Route exact path='/' render={() => <FrontPage games={games} />} />
+        <Route exact path='/:name' render={({ match }) =>
+          <GamePage game={gameByName(match.params.name)} />
+        } />
+      </Router>
       <Footer />
     </div>
   )

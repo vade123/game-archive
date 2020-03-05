@@ -1,6 +1,7 @@
+import { Link } from 'react-router-dom';
 import React from 'react';
 
-const Game = ({ game, setCurrent }) => {
+const GamePage = ({ game }) => {
   const text = {
     fontSize: 15,
   }
@@ -10,11 +11,16 @@ const Game = ({ game, setCurrent }) => {
   }
   return (
     <div>
-      <button style={button} onClick={()=>setCurrent(null)}>{'<<<'}</button>
+      <Link to='/'>
+        <button style={button}>
+          {'<<<'}
+        </button> 
+      </Link>
       <h1>{game.name}</h1>
       <text style={text}>{game.text}</text>
+
     </div>
   )
 }
 
-export default Game;
+export default GamePage;
