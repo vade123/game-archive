@@ -25,7 +25,6 @@ const ListItem = ({ game }) => {
 
   return (
     <ul
-      key={game.name} 
       style={item}
       onMouseEnter={toggleHover}
       onMouseLeave={toggleHover}>

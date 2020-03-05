@@ -12,14 +12,14 @@ const GamePage = ({ game }) => {
     width: '105px'
   }
   return (
-    <div>
+    <div style={{ marginBottom: '20px' }}>
       <Link to='/'>
         <button style={button}>
           {'<<<'}
         </button> 
       </Link>
       <h1>{game.name}</h1>
-      <text style={text}>{game.text}</text>
+      <p style={text}>{game.text}</p>
     </div>
   )
 }

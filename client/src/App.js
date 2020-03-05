@@ -6,6 +6,7 @@ import { Route, BrowserRouter as Router } from 'react-router-dom';
 import Footer from './components/Footer';
 import FrontPage from './components/FrontPage';
 import GamePage from './components/GamePage';
+import UploadPage from './components/UploadPage';
 import gameService from './services/games';
 
 const App = () => {
@@ -30,6 +31,7 @@ const App = () => {
         <Route exact path='/:name' render={({ match }) =>
           <GamePage game={gameByName(match.params.name)} />
         } />
+        <Route exact path='/upload' render={() => <UploadPage />} />
       </Router>
       <Footer />
     </div>
