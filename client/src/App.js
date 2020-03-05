@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 
 import Footer from './components/Footer';
 import FrontPage from './components/FrontPage'
-import Game from './components/Game'
+import Game from './components/GamePage'
 import gameService from './services/games';
 
 const App = () => {
