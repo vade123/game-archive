@@ -3,6 +3,7 @@ import './App.css'
 import React, { useEffect, useState } from 'react';
 
 import Footer from './components/Footer';
+import FrontPage from './components/FrontPage'
 import gameService from './services/games';
 
 const App = () => {
@@ -16,11 +17,7 @@ const App = () => {
 
   return (
     <div>
-      <h1>Juomapeliarkisto</h1>
-      {console.log(games)}
-      {games.map(game => 
-        <li key={game.name}>{game.name}</li>
-      )}
+      <FrontPage games={games} />
       <Footer />
     </div>
   )
