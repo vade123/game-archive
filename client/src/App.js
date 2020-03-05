@@ -2,6 +2,7 @@ import './App.css'
 
 import React, { useEffect, useState } from 'react';
 
+import Footer from './components/Footer';
 import gameService from './services/games';
 
 const App = () => {
@@ -20,6 +21,7 @@ const App = () => {
       {games.map(game => 
         <li key={game.name}>{game.name}</li>
       )}
+      <Footer />
     </div>
   )
 }
