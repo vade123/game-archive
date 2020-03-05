@@ -6,14 +6,14 @@ const ListItem = ({ game, setCurrent }) => {
   let item;
   if (hover) {
     item = {
-      fontSize: 18,
+      fontSize: 20,
       color: 'blue',
       cursor: 'pointer',
       textDecoration: 'underline',
     };
   } else {
     item = {
-      fontSize: 18,
+      fontSize: 20,
       color: 'black',
     };
   }

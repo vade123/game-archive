@@ -3,7 +3,7 @@ import React from 'react';
 const Game = ({ game, setCurrent }) => {
   const text = {
     paddingLeft: 4,
-    fontSize: 13,
+    fontSize: 15,
   }
   const button = {
     height: '35px',
