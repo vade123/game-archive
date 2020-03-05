@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 import React from 'react';
 
 const GamePage = ({ game }) => {
+  if (!game) return null;
+  
   const text = {
     fontSize: 15,
   }
@@ -18,7 +20,6 @@ const GamePage = ({ game }) => {
       </Link>
       <h1>{game.name}</h1>
       <text style={text}>{game.text}</text>
-
     </div>
   )
 }
