@@ -1,19 +1,16 @@
+import '../App.css'
+
+import ListItem from './ListItem'
 import React from 'react';
 
-const FrontPage = ({games}) => {
-  const list = {
-    fontSize: 18
-  }
-  const div = {
-    paddingLeft: 25
-  }
+const FrontPage = ({ games, setCurrent }) => {
+
   return (
     <div>
       <h1>Juomapeliarkisto</h1>
-      <div style={div}>
-        {games.map(game => 
-          <li key={game.name} style={list}>{game.name}</li>
-        )}
+      <div>
+        {games.map(game =>
+          <ListItem game={game} setCurrent={setCurrent} />)}
       </div>
     </div>
   )
