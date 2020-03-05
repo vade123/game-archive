@@ -1,3 +1,3 @@
 # game-archive
 
-Minimalistic web app for storing .txt -files, used for storing drinking game rules
+Minimalistic web app for viewing and storing .txt -files
