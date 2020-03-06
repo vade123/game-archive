@@ -28,9 +28,9 @@ const ListItem = ({ game }) => {
       style={item}
       onMouseEnter={toggleHover}
       onMouseLeave={toggleHover}>
-        <Link to={`/${game.name}`}>> {game.name}</Link>
+      <Link to={`/${game.name}`}>&gt; {game.name}</Link>
     </ul>
-  )
-}
+  );
+};
 
 export default ListItem;

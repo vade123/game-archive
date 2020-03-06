@@ -8,7 +8,7 @@ const FrontPage = ({ games }) => {
   const button = {
     height: '35px',
     width: '253px'
-  }
+  };
   return (
     <div>
       <h1 style={{ fontSize: 26.5 }}>Juomapeliarkisto</h1>
@@ -22,7 +22,7 @@ const FrontPage = ({ games }) => {
         </Link>
       </div>
     </div>
-  )
+  );
 };
 
 export default FrontPage;

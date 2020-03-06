@@ -4,19 +4,19 @@ import { Link } from 'react-router-dom';
 
 const UploadPage = () => {
   const [ file, setFile ] = useState(null);
-  const [ code, setCode ] = useState("");
+  const [ code, setCode ] = useState('');
 
   const button = {
     height: '35px',
     width: '105px'
-  }
+  };
   const onChangeHandler = ( event ) => {
-    setFile(event.target.files[0])  
-  }
+    setFile(event.target.files[0]);
+  };
   const onSubmit = ( event ) => {
     event.preventDefault();
-    const data = new FormData()
-  }
+    const data = new FormData();
+  };
 
   return (
     <div>
@@ -38,7 +38,7 @@ const UploadPage = () => {
         </form>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default UploadPage;

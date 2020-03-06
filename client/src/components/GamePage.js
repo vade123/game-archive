@@ -6,11 +6,11 @@ const GamePage = ({ game }) => {
   
   const text = {
     fontSize: 15,
-  }
+  };
   const button = {
     height: '35px',
     width: '105px'
-  }
+  };
   return (
     <div style={{ marginBottom: '20px' }}>
       <Link to='/'>
@@ -21,7 +21,7 @@ const GamePage = ({ game }) => {
       <h1>{game.name}</h1>
       <p style={text}>{game.text}</p>
     </div>
-  )
-}
+  );
+};
 
 export default GamePage;

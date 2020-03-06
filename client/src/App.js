@@ -22,7 +22,7 @@ const App = () => {
 
   const gameByName = ( name ) => {
     return games.find(game => game.name === name)
-  }
+  };
   
   return (
     <div>
@@ -35,7 +35,7 @@ const App = () => {
       </Router>
       <Footer />
     </div>
-  )
+  );
 }
 
 export default App;
