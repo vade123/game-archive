@@ -18,7 +18,7 @@ const GamePage = ({ game }) => {
           {'<<<'}
         </button> 
       </Link>
-      <h1>{game.name}</h1>
+      <h1 style={{ fontSize: 26.5 }}>{game.name}</h1>
       <p style={text}>{game.text}</p>
     </div>
   );
