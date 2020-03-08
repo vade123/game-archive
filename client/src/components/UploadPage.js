@@ -13,7 +13,15 @@ const UploadPage = ({ setGames }) => {
     width: '105px'
   };
   const onChangeHandler = ( event ) => {
-    setFile(event.target.files[0]);
+    const file = (event.target.files[0]);
+    if (file.type === 'text/plain') {
+      setFile(file);
+      setMessage('');
+    } else {
+      setMessage(`${file.type} is not supported`);
+      event.target.vale = null;
+    }
+    
   };
   const onSubmit = async ( event ) => {
     event.preventDefault();
