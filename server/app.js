@@ -26,5 +26,6 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use('/api/games', gameRouter);
 app.use('/api/users', userRouter);
+app.use(express.static('build'));
 
 module.exports = app;
