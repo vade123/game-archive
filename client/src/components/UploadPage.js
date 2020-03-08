@@ -29,9 +29,6 @@ const UploadPage = () => {
         setCode('');
       }
       setCode('');
-      setTimeout(() => {
-        setMessage(null);
-      }, 6000);
     }
     reader.readAsText(file);
   };
@@ -64,7 +61,8 @@ const UploadPage = () => {
             />
           </div>
           <button 
-            style={{ width: '176px'}} 
+            style={{ width: '176px'}}
+            disabled={!file}
             type='submit'>
             Upload
           </button>
