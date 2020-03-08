@@ -18,7 +18,7 @@ const App = () => {
       .then(result => {
         setGames(result.games)
       });
-  }, []);
+  });
 
   const gameByName = ( name ) => {
     return games.find(game => game.name === name)
