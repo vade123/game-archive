@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 
 import { Link } from 'react-router-dom';
+import gamesService from '../services/games';
 
 const UploadPage = () => {
-  const [ file, setFile ] = useState(null);
+  const [ file, setFile ] = useState('');
   const [ code, setCode ] = useState('');
+  const [ message, setMessage ] = useState(null); 
 
   const button = {
     height: '35px',
@@ -13,9 +15,25 @@ const UploadPage = () => {
   const onChangeHandler = ( event ) => {
     setFile(event.target.files[0]);
   };
-  const onSubmit = ( event ) => {
+  const onSubmit = async ( event ) => {
     event.preventDefault();
-    const data = new FormData();
+    const reader = new FileReader();
+    reader.onload = async ( f ) => {
+      const text = f.target.result;
+
+      try {
+        await gamesService.add(code, file.name, text);
+        setMessage('Upload success')
+      } catch(err) {
+        setMessage('Upload failed, check code');
+        setCode('');
+      }
+      setCode('');
+      setTimeout(() => {
+        setMessage(null);
+      }, 6000);
+    }
+    reader.readAsText(file);
   };
 
   return (
@@ -27,15 +45,31 @@ const UploadPage = () => {
       </Link>
       <div style={{ marginTop: '20px', marginBottom: '20px' }}>
         <div>
-          <input type='file'  accept=".txt" onChange={onChangeHandler} />
+          <input 
+            type='file' 
+            accept=".txt" 
+            onChange={onChangeHandler}
+          />
         </div>
         <br />
         <form onSubmit={onSubmit}>
           <div>
-            <input style={{ width: '170px' }} type='password' name='code' placeholder='super secret upload code' onChange={(target)=>setCode(target.value)}/>
+            <input 
+              style={{ width: '170px' }} 
+              type='password' 
+              name='code' 
+              placeholder='super secret upload code' 
+              onChange={({ target })=>setCode(target.value)} 
+              value={code}
+            />
           </div>
-          <button style={{ width: '176px'}} type='submit'>Upload</button>
+          <button 
+            style={{ width: '176px'}} 
+            type='submit'>
+            Upload
+          </button>
         </form>
+        <p>{message}</p>
       </div>
     </div>
   );
