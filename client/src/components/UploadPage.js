@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import gamesService from '../services/games';
 
-const UploadPage = () => {
+const UploadPage = ({ setGames }) => {
   const [ file, setFile ] = useState('');
   const [ code, setCode ] = useState('');
   const [ message, setMessage ] = useState(null); 
@@ -22,8 +22,9 @@ const UploadPage = () => {
       const text = f.target.result;
 
       try {
-        await gamesService.add(code, file.name, text);
-        setMessage('Upload success')
+        const game = await gamesService.add(code, file.name, text);
+        setMessage('Upload success');
+        setGames(game);
       } catch(err) {
         setMessage('Upload failed, check code');
         setCode('');

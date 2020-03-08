@@ -18,7 +18,7 @@ const App = () => {
       .then(result => {
         setGames(result.games)
       });
-  });
+  }, []);
 
   const gameByName = ( name ) => {
     return games.find(game => game.name === name)
@@ -31,7 +31,7 @@ const App = () => {
         <Route exact path='/:name' render={({ match }) =>
           <GamePage game={gameByName(match.params.name)} />
         } />
-        <Route exact path='/upload' render={() => <UploadPage />} />
+        <Route exact path='/upload' render={() => <UploadPage setGames={(game) => setGames(games.concat(game))} />} />
       </Router>
       <Footer />
     </div>

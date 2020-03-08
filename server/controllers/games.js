@@ -22,7 +22,7 @@ gameRouter.post('/add', async (req, res) => {
       text: nl2br(text),
     });
     const savedGame = await game.save();
-    res.status(201).json({ name: savedGame.name });
+    res.status(201).json(savedGame);
   }
 });
 
