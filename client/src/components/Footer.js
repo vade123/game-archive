@@ -11,7 +11,7 @@ const Footer = () => {
   };
   return (
     <div style={style}>
-      <strong>----------------------------</strong>
+      <strong>---------------------------------------</strong>
       <br />
       <strong style={text}>tg: @vade123</strong>
       <br />
