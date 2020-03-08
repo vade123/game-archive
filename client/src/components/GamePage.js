@@ -18,8 +18,8 @@ const GamePage = ({ game }) => {
           {'<<<'}
         </button> 
       </Link>
-      <h1 style={{ fontSize: 26.5 }}>{game.name}</h1>
-      <p style={text}>{game.text}</p>
+      <h1 style={{ fontSize: 22 }}>{game.name}</h1>
+      <div style={text} dangerouslySetInnerHTML={{ __html: game.text }} />
     </div>
   );
 };
