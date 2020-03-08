@@ -1,10 +1,7 @@
 import { Link } from 'react-router-dom';
-import NoMatch from './NoMatch';
 import React from 'react';
 
-const GamePage = ({ game }) => {
-  if (!game) return <NoMatch />;
-  
+const NoMatch = () => {
   const button = {
     height: '35px',
     width: '105px'
@@ -16,10 +13,11 @@ const GamePage = ({ game }) => {
           {'<<<'}
         </button> 
       </Link>
-      <h1 style={{ fontSize: 22 }}>{game.name}</h1>
-      <div style={{ fontSize: 15 }} dangerouslySetInnerHTML={{ __html: game.text }} />
+      <div>
+        <p>Tääl ei oo mitää lol</p>
+      </div>
     </div>
   );
 };
 
-export default GamePage;
+export default NoMatch;

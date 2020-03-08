@@ -1,5 +1,3 @@
-import '../App.css';
-
 import { Link } from 'react-router-dom';
 import ListItem from './ListItem';
 import React from 'react';
