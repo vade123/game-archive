@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const path = require('path');
 const config = require('./utils/config');
 const gameRouter = require('./controllers/games');
 const userRouter = require('./controllers/users');
@@ -27,5 +28,8 @@ app.use(bodyParser.json());
 app.use('/api/games', gameRouter);
 app.use('/api/users', userRouter);
 app.use(express.static('build'));
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
 
 module.exports = app;
