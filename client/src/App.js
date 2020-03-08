@@ -1,4 +1,4 @@
-import './App.css'
+import './App.css';
 
 import React, { useEffect, useState } from 'react';
 import { Route, BrowserRouter as Router } from 'react-router-dom';
@@ -16,12 +16,12 @@ const App = () => {
     gameService
       .getAll()
       .then(result => {
-        setGames(result.games)
+        setGames(result.games);
       });
   }, []);
 
   const gameByName = ( name ) => {
-    return games.find(game => game.name === name)
+    return games.find(game => game.name === name);
   };
   
   return (
@@ -36,6 +36,6 @@ const App = () => {
       <Footer />
     </div>
   );
-}
+};
 
 export default App;

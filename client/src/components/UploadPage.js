@@ -38,7 +38,7 @@ const UploadPage = ({ setGames }) => {
         setCode('');
       }
       setCode('');
-    }
+    };
     reader.readAsText(file);
   };
 
