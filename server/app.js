@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const config = require('./utils/config');
 const gameRouter = require('./controllers/games');
+const userRouter = require('./controllers/users');
 
 const app = express();
 
@@ -24,5 +25,6 @@ mongoose.connect(config.MONGODB_URI, {
 app.use(cors());
 app.use(bodyParser.json());
 app.use('/api/games', gameRouter);
+app.use('/api/users', userRouter);
 
 module.exports = app;
